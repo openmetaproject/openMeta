@@ -1,20 +1,29 @@
 import React from "react";
 import { Dropdown, Menu, Search } from "semantic-ui-react";
+import { NavLink } from "react-router-dom";
 
 const Nav = () => {
   return (
-    <div class="ui secondary menu">
-      <a class="active item">Open Meta</a>
-      <a class="item">My Dashboard</a>
-      <a class="item">My Reviews</a>
+    <div className="ui secondary menu">
+      <NavLink to="/landing" className="item">
+        Open Meta
+      </NavLink>
+      <NavLink to="/dashboard" className="item">
+        My Dashboard
+      </NavLink>
+      <NavLink to="/myanalyses" className="item">
+        My Reviews
+      </NavLink>
 
-      <div class="right menu">
-        <Search size="small" />
+      <div className="right menu">
+        <Search placeholder="Search website..." size="small" />
 
-        <Dropdown item text={<i class="user circle outline icon" />}>
+        <Dropdown item text={<i className="user circle outline icon" />}>
           <Dropdown.Menu>
             <Dropdown.Item>My Account</Dropdown.Item>
-            <Dropdown.Item>Profile</Dropdown.Item>
+            <Dropdown.Item>
+              <NavLink to="/profile">Profile</NavLink>
+            </Dropdown.Item>
             <Dropdown.Item>Other</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
